@@ -13,7 +13,26 @@ class Protein():
         return print(list(combinations))
 
 # TEST CODE
-test = Protein("HHPHHHPPPPPH")
+test = Protein("HPP")
 test.construct_permutations()
-    
+
 # Protein, Chain, Stability, constructor, display protein
+
+# coordinates = [[0, 0]]
+# currentcoord = [0, 0]
+# for protein in beststring:
+#   if protein.value = 1: rechts
+#       currentcoord[0] = currentcoord[0] + 1
+#       coordinates.append(currentcoord)
+
+#   if protein.value = -1: links
+#       currentcoord[0] = currentcoord[0] - 1
+#       coordinates.append(currentcoord)
+
+#   if protein.value = 2: boven
+#       currentcoord[0] = currentcoord[0] + 2
+#       coordinates.append(currentcoord)
+
+#   if protein.value = -2: onder
+#       currentcoord[0] = currentcoord[0] - 2
+#       coordinates.append(currentcoord)
