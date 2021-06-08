@@ -25,4 +25,3 @@ def display_protein(coordinates):
     plt.show()
 
 # TEST CODE
-display_protein([(0,0), (0,1), (1,1)])
