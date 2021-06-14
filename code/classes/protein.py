@@ -11,7 +11,7 @@ class Protein():
         stability = 0
         H_coords = [protein[amino] for amino in range(len(self.chain)) if self.chain[amino] == 'H']
         
-        [ stability := stability-1 for x in range(len(H_coords)) for y in range(1,len(H_coords))
+        [stability := stability-1 for x in range(len(H_coords)) for y in range(1,len(H_coords))
         if sum(map(abs,np.subtract(H_coords[x],H_coords[y]))) == 1]
 
         return stability

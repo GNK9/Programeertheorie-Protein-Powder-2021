@@ -17,4 +17,4 @@ class Bfs():
                            for direction in self.directions
                            if len(set([*positions,tuple(np.add(positions[-1],direction))])) == tuple_length  ]
             start = combinations
-        return combinations
+        return combinations[:int(len(combinations)/2)]
