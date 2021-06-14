@@ -7,15 +7,19 @@ import timeit
 # Initialization
 chain = "HHPHHHPHPHHHPH"
 chain2 = "HPHPPHHPHPPHPHHPPHPH"
-permutations = Bfs(chain)
-evaluate = Protein(chain)
+chain3 = "CPPC"
+permutations = Bfs(chain3)
+evaluate = Protein(chain3)
 
 # Baseline 
 start = timeit.default_timer()
-baseline = Bfs(chain2)
+baseline = Bfs(chain3)
 print(f'Solution: {random.choice(baseline.get_permutations())}')
 stop = timeit.default_timer()
 print(f'Baseline Duration: {stop-start:.4f} seconds.')
 
 # Algorithm 1- visualisation
-# display_protein(evaluate.get_best_permutation(permutations.get_permutations())[1],chain)
+print(evaluate.get_best_permutation(permutations.get_permutations()),chain3)
+
+# Algorithm 1- visualisation (with Cysteine)
+print(evaluate.get_best_permutation_cyst(permutations.get_permutations()),chain3)
