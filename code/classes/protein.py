@@ -9,11 +9,10 @@ class Protein():
 
     def score_protein(self, protein):
         stability = 0
-        H_coords = [ [amino,protein[amino]] for amino in range(len(self.chain)) if self.chain[amino] == 'H']
+        H_coords = [protein[amino] for amino in range(len(self.chain)) if self.chain[amino] == 'H']
         
         [ stability := stability-1 for x in range(len(H_coords)) for y in range(1,len(H_coords))
-        if sum(map(abs,np.subtract(H_coords[x][1],H_coords[y][1]))) == 1
-        if (H_coords[y][0] - H_coords[x][0])%2]
+        if sum(map(abs,np.subtract(H_coords[x],H_coords[y]))) == 1]
 
         return stability
 

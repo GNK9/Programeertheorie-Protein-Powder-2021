@@ -2,7 +2,7 @@ from classes.protein import Protein
 from algorithms.bfs import Bfs  
 from visualisation.visualisation import display_protein
 
-chain = "HHPHHHPHPHHHPH"
+chain = "HPPH"
 permutations = Bfs(chain)
 evaluate = Protein(chain)
 
