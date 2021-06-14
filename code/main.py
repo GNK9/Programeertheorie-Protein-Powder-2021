@@ -1,7 +1,9 @@
 from classes.protein import Protein
+from algorithms.bfs import Bfs  
 from visualisation.visualisation import display_protein
 
 chain = "HHPHHHPHPHHHPH"
-test = Protein(chain)
+permutations = Bfs(chain)
+evaluate = Protein(chain)
 
-print(display_protein(test.get_best_permutation(test.get_permutations())[1],chain))
+display_protein(evaluate.get_best_permutation(permutations.get_permutations())[1],chain)
