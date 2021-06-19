@@ -2,7 +2,7 @@ import matplotlib.path as mpath
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
-def display_protein(coordinates, chain):
+def display_protein(coordinates, chain, stability):
 
     fig, ax = plt.subplots()
 
@@ -22,4 +22,5 @@ def display_protein(coordinates, chain):
 
     ax.grid()
     ax.axis('equal')
+    plt.title( f"Stability Score:{stability}")
     plt.show()

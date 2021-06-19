@@ -1,25 +1,27 @@
 from classes.protein import Protein
 from algorithms.bfs import Bfs  
 from visualisation.visualisation import display_protein
-import random
+from algorithms.baseline import baseline
 import timeit
 
-# Initialization
-chain = "HHPHHHPHPHHHPH"
-chain2 = "HPHPPHHPHPPHPHHPPHPH"
-chain3 = "CPPC"
-permutations = Bfs(chain3)
-evaluate = Protein(chain3)
+def main(chain):
+    # Initialization.
+    evaluate = Protein(chain)
+    
+    # Generate Bfs-permutations & measure duration.
+    bfs_start = timeit.default_timer()
+    permutations = Bfs(chain).get_permutations()
+    bfs_stop = timeit.default_timer()
+    bfs_time = bfs_stop-bfs_start
 
-# Baseline 
-start = timeit.default_timer()
-baseline = Bfs(chain3)
-print(f'Solution: {random.choice(baseline.get_permutations())}')
-stop = timeit.default_timer()
-print(f'Baseline Duration: {stop-start:.4f} seconds.')
+    #Baseline
+    baseline(permutations, bfs_time)
 
-# Algorithm 1- visualisation
-print(evaluate.get_best_permutation(permutations.get_permutations()),chain3)
+    # Measure Stability & duration.
+    start = timeit.default_timer()
+    result = evaluate.get_best_permutation(permutations)
+    stop = timeit.default_timer()
+    return print(f'Bfs Duration: {stop-start+bfs_time:.4f} seconds.'), display_protein(result[1], chain, result[0])
 
-# Algorithm 1- visualisation (with Cysteine)
-print(evaluate.get_best_permutation_cyst(permutations.get_permutations()),chain3)
+if __name__ == "__main__":
+    main("HHPHHHPHPHHHPH")
