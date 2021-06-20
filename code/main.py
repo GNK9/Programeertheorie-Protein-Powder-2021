@@ -24,4 +24,4 @@ def main(chain):
     return print(f'Bfs Duration: {stop-start+bfs_time:.4f} seconds.'), display_protein(result[1], chain, result[0])
 
 if __name__ == "__main__":
-    main("HHPHHHPHPHHHPH")
+    main("HPPH")
