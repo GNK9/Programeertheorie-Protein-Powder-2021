@@ -9,8 +9,9 @@ class Protein():
 
     def score_protein(self, protein):
         stability = 0
-        for x in range(self.chain_length):
-            for y in range(x+2, self.chain_length):
+        chain_length = len(protein)
+        for x in range(chain_length):
+            for y in range(x+2, chain_length):
                 # Checks for Cystein-bonds.
                 if self.chain[x] == 'C' and self.chain[y] == "C":
                     if sum(map(abs,np.subtract(protein[x],protein[y]))) == 1:
