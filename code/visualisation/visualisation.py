@@ -11,9 +11,9 @@ def display_protein(coordinates, chain, stability):
     path_data = [x for x in coordinates]
     verts = path_data
     path = mpath.Path(verts)
-    
+    x, y = [j[0] for j in path.vertices], [j[1] for j in path.vertices]
+
     # plot control points and connect lines of all coordinates
-    x, y = zip(path.vertices)
     line, = ax.plot(x, y, color='black', marker='o',
      markerfacecolor='blue', linewidth = 3, markeredgecolor='blue', markersize=16)
 
@@ -23,7 +23,7 @@ def display_protein(coordinates, chain, stability):
     path = mpath.Path(verts)
 
     # plot control points and connect lines of "H" protein coordinates
-    x, y = zip(path.vertices)
+    x, y = [j[0] for j in path.vertices], [j[1] for j in path.vertices]
     line, = ax.plot(x, y, color='red', linestyle = 'None', marker='o',
      markerfacecolor='red', markeredgecolor='red', markersize=16)
 
@@ -34,7 +34,7 @@ def display_protein(coordinates, chain, stability):
         path = mpath.Path(verts)
 
         # plot control points and connecting lines
-        x, y = zip(*path.vertices)
+        x, y = [j[0] for j in path.vertices], [j[1] for j in path.vertices]
         line, = ax.plot(x, y, color='green', linestyle = 'None', marker='o',
         markerfacecolor='green', markeredgecolor='green', markersize=16)
 
