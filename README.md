@@ -33,7 +33,7 @@ Dit algoritme is als volgt geïmplementeerd in de code:
 
 Het uiteindelijke algoritme, die de beste resultaten oplevert, is het Breadth-first search greedy algoritme. Dit algoritme maakt gebruik van een pruning mechanisme om zo snel mogelijk de meest stabiele permutatie te vinden. In het geval van de protein case, wordt er door de aminozuurketen “gelooped”, totdat er een Hydrofobe of Cysteïne aminozuur wordt gevonden. Wanneer dit het geval is wordt dit punt als “checkpoint” gebruikt. Dit houdt in dat alle aminozuren tot aan de “checkpoint” (subketen) wordt gebruikt om permutaties te vormen. Van al deze permutaties wordt vervolgens bepaald welke het meest stabiel is. De meest stabiele permutatie wordt vervolgens gebruikt als beginpunt om van daaruit te permuteren naar de volgende Hydrofobe of cysteïne aminozuur(checkpoint). In het geval dat alle permutaties dezelfde stabiliteit hebben of helemaal geen H-bonds hebben gevormd, wordt er geen selectie gemaakt. Alle permutaties worden vervolgens als beginpunt gebruikt tot aan de volgende checkpoint. In Figuur 2 zien we een illustratie van dit algoritme. In dit geval worden de groene nodes gebruikt om de meest stabiele permutatie te vinden.
 
-![Alt text](./docs/bfs_greedy.png)
+![Alt text](./docs/bfs-greedy.png)
 #### Figuur 2. Breadth-first search greedy.
 
 Dit algoritme is op de volgende wijze geïmplementeerd:
