@@ -2,11 +2,13 @@
 
 ###  Case
 
-Eitwitten zijn lange strengen van hydrofobe (H) en polaire (P) aminozuren die belangrijk zijn voor verschillende processen in het lichaam. De configuratie, ofwel vouwing van zo een eiwit is bepalend voor het functioneren ervan; verkeerd opgevouwen eiwitten staan aan de basis van verschillende ziektes als kanker, Alzheimer en taaislijmziekte.
+Eiwitten zijn lange strengen van hydrofobe (H) en polaire (P) aminozuren die belangrijk zijn voor verschillende processen in het lichaam. De configuratie (vouwing) van een eiwit is bepalend voor het functioneren van het eiwit. Verkeerd gevouwen eiwitten zijn kenmerkend bij ziektes zoals kanker, Alzheimer en taaislijmziekte.
 
-Het mechanisme van de ewitten is als volgt: De hydrofobe aminozuren van een eiwit willen graag 'naast elkaar' liggen. De polaire aminozuren hebben deze voorkeur niet. Als er twee hydrofobe aminozuren naast elkaar liggen ontstaat er een zogeheten 'H-bond' tussen deze aminozuren. Hoe meer 'H-bonds' een eiwit bevat, hoe stabieler dat eiwit is. Het doel is dus om de gegeven eiwitten zo op te vouwen, dat ze zo stabiel mogelijk zijn. 
+De eiwitten gedragen zich als volgt: de hydrofobe aminozuren (H) van een eiwit willen graag 'naast elkaar' liggen. De polaire aminozuren (P) hebben deze voorkeur niet. Als er twee hydrofobe aminozuren naast elkaar liggen, ontstaat er een zogeheten 'H-bond' tussen deze twee aminozuren. Hoe meer 'H-bonds' een eiwit bevat, hoe stabieler dit eiwit is. Om een eiwit zo stabiel mogelijk te krijgen, moet dit eiwit dus zo goed mogelijk worden opgevouwen.
 
-Er wordt uitgegaan van een 2D grid waarbij ieder aminozuur op een gridpunt komt te liggen. Het volgende aminozuur ligt op één van de aangrenzende gridpunten, waardoor de eiwitten 'opgevouwen' kunnen worden met hoeken van telkens 90 graden. Als er twee H aminozuren naast elkaar liggen, krijgt het eiwit een score van -1. Hoe lager deze score, hoe stabieler het eiwit. 
+Om de eiwitten en hun vouwing te visualiseren is er een 2D grid gemaakt, waarbij ieder aminozuur op een punt in de grid komt te liggen. Het eerste aminozuur wordt geplaatst in het centrum van de grid (0, 0) en wordt gezien als het beginpunt van de vouwing. De daaropvolgende aminozuren liggen naast hun voorganger in de grid en kunnen bewegen richtingen van 90 graden. Ze kunnen natuurlijk niet bewegen naar een punt waar al een ander aminozuur ligt. Dit betekent dat de eiwitten in sommige gevallen maar drie, twee of soms zelfs maar één richting op kunnen. Als er twee hydrofobe (H) aminozuren naast elkaar liggen (er dus een “H Bond” aanwezig is), krijgt het eiwit een stabiliteit score van -1. Een binding tussen een polaire aminozuur (P) en een hydrofobe (H) aminozuur levert geen punten op. Hoe lager de stabiliteit score, hoe stabieler het eiwit. 
+
+Bij sommige eiwitten is er ook een zogenaamd Cysteïne (C) aminozuur aanwezig. Dit aminozuur gedraagt zich qua bewegingsmogelijkheid in de grid hetzelfde als de andere aminozuren, alleen is een “C bond” (twee Cysteïne aminozuren naast elkaar) zeer gewenst; dit levert een stabiliteits score van -5 op. Ook kan er een binding ontstaan tussen een Cysteïne (C) aminozuur en een hydrofobe (H) aminozuur. Dit levert echter slechts een stabiliteit score op van -1.
 
 ### Reproductie resultaten
 
