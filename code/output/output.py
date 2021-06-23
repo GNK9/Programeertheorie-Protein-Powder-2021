@@ -1,14 +1,9 @@
 import csv
-from matplotlib.pyplot import xkcd
 import numpy as np
 
+# Outputs stable permutation "output.csv". 
 def output(chain, permutation, stability):
-    """
-    Output protein configuration to csv
-    input: [{Amino-acid: position}...]
-    output: CSV
-    """
-    with open('C:/Users/Ali/Desktop/Programeertheorie-Protein-Powder-2021/code/output/output.csv', newline="", mode='w') as output_file:
+    with open('../code/output/output.csv', newline="", mode='w') as output_file:
         directions = {(1,0):1, (0,1):2, (-1, 0):-1, (0,-1):-2}
         headers = ['amino','fold']
         writer = csv.writer(output_file)

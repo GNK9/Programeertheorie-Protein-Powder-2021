@@ -1,31 +1,40 @@
 import numpy as np
 
 class Bfs_greedy():
+
+    # Configure starting point and directions in grid.
     def __init__(self, chain):
         self.chain = chain
         self.chain_length = len(chain)
         self.sequence = ''
         self.directions = [(0,1), (1,0), (0,-1), (-1,0)]
         self.start_coords = [[(0,0),(0,1)]]
-        
+
+    # Function to return the stability score and the optimal configuration of the protein. 
     def stable_permutation(self):
         permutations = self.start_coords
         for amino in self.chain:
             self.sequence += amino
-            if amino in {"H","C"} and len(self.sequence) > 2:
+            if amino in {"H","C"} and len(self.sequence) > 2 or len(self.sequence) == self.chain_length:
                 permutations = self.generate_permutations(permutations)
+                
+                # Handles dead ends.
                 if not permutations:
                     del scored_permutations[stability]
                     for stability,permutation in sorted(scored_permutations.items(), key=lambda x: x[1], reverse=True):
                         permutations = self.generate_permutations([permutation])
                         if permutations:
                             break
+
+                # Scores permutations and selects most stable.
                 scored_permutations = {self.score_protein(permutation):permutation for permutation in permutations}
                 if len(scored_permutations) > 1:
                     stability = min(scored_permutations.items())[0]
                     permutations = [min(scored_permutations.items())[1]]
+
         return stability,permutations
-                
+
+    # Function to generate all permutations of sequence.            
     def generate_permutations(self, permutations):
         sequence_length = len(permutations[0])
         for x in range(len(self.sequence) - sequence_length):
@@ -37,10 +46,12 @@ class Bfs_greedy():
             permutations = new_permutations
         return new_permutations
 
+    # Function to assign the stability score of a protein.
     def score_protein(self, protein):
         stability = 0
         for x in range(len(protein)):
             for y in range(x+2, len(protein)):
+                
                 # Checks for Cystein-bonds.
                 if self.chain[x] == 'C' and self.chain[y] == "C":
                     if sum(map(abs,np.subtract(protein[x],protein[y]))) == 1:
