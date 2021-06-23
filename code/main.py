@@ -36,4 +36,4 @@ def main(chain, greedy = True):
 
 
 if __name__ == "__main__":
-    main("HHPHHHPHPHHHPH", greedy=True)
+    main("HCPHPHPHCHHHHPCCPPHPPPHPPPPCPPPHPPPHPHHHHCHPHPHPHH", greedy=True)
