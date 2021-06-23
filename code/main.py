@@ -10,13 +10,13 @@ def main(chain, greedy = True):
     evaluate = Protein(chain)
     
     # Generate Bfs-permutations & measure duration.
-    bfs_start = timeit.default_timer()
-    permutations = Bfs(chain).get_permutations()
-    bfs_stop = timeit.default_timer()
-    bfs_time = bfs_stop-bfs_start
+    #bfs_start = timeit.default_timer()
+    #permutations = Bfs(chain).get_permutations()
+    #bfs_stop = timeit.default_timer()
+    #bfs_time = bfs_stop-bfs_start
 
     #Baseline
-    baseline(permutations, bfs_time)
+    #baseline(permutations, bfs_time)
 
     #-------------------------------------- Bfs-Greedy-algorithm --------------------------------------------------#
     if greedy:
@@ -36,4 +36,4 @@ def main(chain, greedy = True):
 
 
 if __name__ == "__main__":
-    main("HCPHPHPHCHHHHPCCPPHPPPHPPPPCPPPHPPPHPHHHHCHPHPHPHH", greedy=True)
+    main("HHPHPHPHPHHHHPHPPPHPPPHPPPPHPPPHPPPHPHHHHPHPHPHPHH", greedy=True)
