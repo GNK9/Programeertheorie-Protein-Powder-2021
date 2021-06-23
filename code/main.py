@@ -26,13 +26,13 @@ def main(chain, greedy = True):
         stop = timeit.default_timer()
         return print(f'Bfs-greedy Duration: {stop-start:.4f} seconds.'), display_protein(result[0], chain, stability)
 
-    #-------------------------------------- Bfs-algorithm --------------------------------------------------#
+    #-------------------------------------- Bfs-algorithm ---------------------------------------------------------#
 
     # Measure Stability & duration.
     start = timeit.default_timer()
-    result = evaluate.get_best_permutation(permutations)
+    stability,result = evaluate.get_best_permutation(permutations)
     stop = timeit.default_timer()
-    return print(f'Bfs Duration: {stop-start+bfs_time:.4f} seconds.'), display_protein(result[1], chain, result[0])
+    return print(f'Bfs Duration: {stop-start+bfs_time:.4f} seconds.'), display_protein(result[0], chain, stability)
 
 
 if __name__ == "__main__":
